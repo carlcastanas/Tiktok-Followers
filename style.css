@@ -1,0 +1,107 @@
+:root {
+  --shadeColor: #3042cf;
+  --blueColor: #1d9bf0;
+  --blueHover: #28beff;
+}
+body {
+  overflow: hidden;
+  background-color: var(--blueColor);
+  font-family: "Kanit", sans-serif;
+}
+.numDiv {
+  color: var(--blueColor);
+  display: inline-block;
+  font-size: 40vmin;
+  font-weight: 900;
+  text-shadow: -1px 1px var(--shadeColor), -2px 2px var(--shadeColor);
+  -webkit-animation: numAnim 1000ms cubic-bezier(1, 0, 0, 1) alternate infinite;
+          animation: numAnim 1000ms cubic-bezier(1, 0, 0, 1) alternate infinite;
+}
+.numDiv:nth-of-type(2) {
+  -webkit-animation-delay: -200ms;
+          animation-delay: -200ms;
+}
+.numDiv:nth-of-type(3) {
+  -webkit-animation-delay: -400ms;
+          animation-delay: -400ms;
+}
+@-webkit-keyframes numAnim {
+  to {
+    color: var(--blueHover);
+    transform: translate(8px, -8px);
+    text-shadow: -1px 1px var(--shadeColor), -2px 2px var(--shadeColor),
+      -3px 3px var(--shadeColor), -4px 4px var(--shadeColor),
+      -5px 5px var(--shadeColor), -6px 6px var(--shadeColor),
+      -7px 7px var(--shadeColor), -8px 8px var(--shadeColor),
+      -9px 9px var(--shadeColor), -10px 10px var(--shadeColor);
+  }
+}
+@keyframes numAnim {
+  to {
+    color: var(--blueHover);
+    transform: translate(8px, -8px);
+    text-shadow: -1px 1px var(--shadeColor), -2px 2px var(--shadeColor),
+      -3px 3px var(--shadeColor), -4px 4px var(--shadeColor),
+      -5px 5px var(--shadeColor), -6px 6px var(--shadeColor),
+      -7px 7px var(--shadeColor), -8px 8px var(--shadeColor),
+      -9px 9px var(--shadeColor), -10px 10px var(--shadeColor);
+  }
+}
+.flexDiv,
+.flexV {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+}
+.flexDiv {
+  height: 30vmin;
+}
+.flexV {
+  position: absolute;
+  inset: 0;
+  flex-direction: column;
+}
+.folowersDiv {
+  color: var(--blueHover);
+  text-shadow: -1px 1px var(--shadeColor);
+  font-size: 7vmin;
+  font-weight: 400;
+  letter-spacing: 5vmin;
+  margin-left: 4vmin;
+  text-align: center;
+  font-family: "Cherry Swash", cursive;
+}
+
+.followDiv {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 8px 80px;
+  background: #3042cf;
+  transform: translate(33%, -123%) rotate(-45deg);
+  z-index: 11;
+  font-family: sans-serif;
+}
+.followDiv a {
+  text-decoration: none;
+  color: skyblue;
+  transition: color 200ms linear 0s;
+}
+.followDiv a:hover {
+  filter: brightness(1000%);
+}
+.followDiv a:hover::after {
+  filter: drop-shadow(1px -1px black) drop-shadow(-1px -1px black)
+    drop-shadow(1px 1px black) drop-shadow(-1px 1px black);
+}
+.followDiv a::after {
+  content: "";
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/4/4f/Twitter-logo.svg);
+  filter: drop-shadow(1px -1px #3042cf) drop-shadow(-1px -1px #3042cf)
+    drop-shadow(1px 1px #3042cf) drop-shadow(-1px 1px #3042cf);
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding: 20px;
+  margin-left: 6px;
+}
